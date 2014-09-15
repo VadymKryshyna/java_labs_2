@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plane>
+    <arming>true</arming>
+    <model>Model</model>
+    <origin>Ukraine</origin>
+    <parameter>
+        <height>5</height>
+        <length>40</length>
+        <width>15</width>
+    </parameter>
+    <price>100.0</price>
+    <radar>true</radar>
+    <rockets>5</rockets>
+    <seat>2</seat>
+    <type>Bomber</type>
+</plane>

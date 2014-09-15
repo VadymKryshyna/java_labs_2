@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plane>
+    <model>Super Model</model>
+    <origin>Ukraine</origin>
+    <chars id="1">
+        <type>SUPPORT_PLANE</type> 
+        <seat>2</seat> 
+        <arming>HAVE</arming>
+        <rockets>3</rockets>
+        <radar>HAVE</radar>
+    </chars>
+    <parameters>
+        <length>40</length> 
+        <height>5</height> 
+        <width>15</width> 
+    </parameters>
+    <price>100.0</price> 
+</plane>

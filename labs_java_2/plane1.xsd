@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="plane">
+        <xs:annotation>
+            <xs:documentation>Specifies information about a plane.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="model"/>
+                <xs:element ref="origin"/>
+                <xs:element ref="chars"/>
+                <xs:element ref="parameters"/>
+                <xs:element ref="price"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="model" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Model plane.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    
+    <xs:element name="origin" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Cantry origin plane.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="chars">
+        <xs:annotation>
+            <xs:documentation>Specifies information about a chars plane.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="type"/>
+                <xs:element ref="seat"/>
+                <xs:element ref="arming"/>
+                <xs:element ref="rockets"/>
+                <xs:element ref="radar"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name = "type">
+        <xs:annotation>
+            <xs:documentation>Type of plane.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base = "xs:string">
+                <xs:enumeration value = "SUPPORT_PLANE"/>
+                <xs:enumeration value = "ESCORT_PLANE"/>
+                <xs:enumeration value = "FIGHTER_PLANE"/>
+                <xs:enumeration value = "CATCHER_PLANE"/>
+                <xs:enumeration value = "AIRCRAFT_PLANE"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="seat">
+        <xs:annotation>
+            <xs:documentation>Count seats in plane.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+                <xs:maxInclusive value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="arming">
+        <xs:annotation>
+            <xs:documentation>Arming on plane.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base = "xs:string">
+                <xs:enumeration value = "HAVE"/>
+                <xs:enumeration value = "HAVE_NOT"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="rockets">
+        <xs:annotation>
+            <xs:documentation>Count rockets in plane.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    
+    <xs:element name="radar">
+        <xs:annotation>
+            <xs:documentation>Radar on plane.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base = "xs:string">
+                <xs:enumeration value = "HAVE"/>
+                <xs:enumeration value = "HAVE_NOT"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="parameters">
+        <xs:annotation>
+            <xs:documentation>Specifies information about a size plane.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="length"/>
+                <xs:element ref="height"/>
+                <xs:element ref="width"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    
+    <xs:element name="length" type="xs:integer">
+        <xs:annotation>
+            <xs:documentation>Length for this parameters.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="height" type="xs:integer">
+        <xs:annotation>
+            <xs:documentation>Height for this parameters.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="width" type="xs:integer">
+        <xs:annotation>
+            <xs:documentation>Width for this parameters.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="price" type="xs:double">
+        <xs:annotation>
+            <xs:documentation>Price plane.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+</xs:schema>
